@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      2
 // @description  Lets you start locked assignments
-// @author       Aiden Cannon
+// @author       Tap
 // @match        https://student.edgenuity.com/*
 // @grant        none
 // ==/UserScript==
