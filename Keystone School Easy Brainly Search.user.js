@@ -33,6 +33,7 @@
     console.log(getClip());
     var buttonpressed = false;
     function mouseup(e){
+        getClip();
         if(buttonpressed == false){
             document.getElementById("searchButton").style.visibility = "visible"
             document.getElementById("searchButton").style.top = e.clientY + 10 + "px"
@@ -49,5 +50,5 @@
         var url = 'https://brainly.com/app/ask?entry=top&q=' + getClip();
         window.open(url , '_blank')
     }
-    // Your code here...
+    setInterval(() => {getClip();},500)
 })();
