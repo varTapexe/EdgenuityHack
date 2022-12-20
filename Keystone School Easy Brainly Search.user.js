@@ -21,12 +21,19 @@
     document.body.append(button)
     document.getElementById("searchButton").onclick = onButtonClick
     document.onmouseup = mouseup
-    var selection = navigator.clipboard.readText().then((copied) => {
-        console.log(`Found "${copied} from clipboard);
+            var copy
+    function getClip () {
+        navigator.clipboard.readText().then((copied) => {
+        console.log(`Found "${copied}" from clipboard`);
+            copy = copied
+            console.log(copy)
+        })
+        return copy
     }
+    console.log(getClip());
     var buttonpressed = false;
     function mouseup(e){
-        if(buttonpressed == false && selection != ""){
+        if(buttonpressed == false){
             document.getElementById("searchButton").style.visibility = "visible"
             document.getElementById("searchButton").style.top = e.clientY + 10 + "px"
             document.getElementById("searchButton").style.left = e.clientX + "px"
@@ -38,9 +45,8 @@
         }
     }
     function onButtonClick(){
-        selection = selection
         buttonpressed = true
-        var url = 'https://brainly.com/app/ask?entry=top&q=' + encodeURIComponent(window.getSelection().toString())
+        var url = 'https://brainly.com/app/ask?entry=top&q=' + getClip();
         window.open(url , '_blank')
     }
     // Your code here...
