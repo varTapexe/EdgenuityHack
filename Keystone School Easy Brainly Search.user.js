@@ -21,9 +21,11 @@
     document.body.append(button)
     document.getElementById("searchButton").onclick = onButtonClick
     document.onmouseup = mouseup
+    var selection = navigator.clipboard.readText().then((copied) => {
+        console.log(`Found "${copied} from clipboard);
+    }
     var buttonpressed = false;
     function mouseup(e){
-        var selection = document.getSelection().toString()
         if(buttonpressed == false && selection != ""){
             document.getElementById("searchButton").style.visibility = "visible"
             document.getElementById("searchButton").style.top = e.clientY + 10 + "px"
@@ -36,6 +38,7 @@
         }
     }
     function onButtonClick(){
+        selection = selection
         buttonpressed = true
         var url = 'https://brainly.com/app/ask?entry=top&q=' + encodeURIComponent(window.getSelection().toString())
         window.open(url , '_blank')
