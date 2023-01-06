@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         EdgenuiHack
 // @version      1.2.9
-// @description  Adds tweaks to edgenuity [IMPORTANT NOTE: EdgenuiHack is not created by, sponsored by, affiliated with, endorsed by, or otherwise assosiated with Edgenuity Inc]
+// @description  Adds hacks to edgenuity [IMPORTANT NOTE: EdgenuiHack is not created by, sponsored by, affiliated with, endorsed by, or otherwise assosiated with Edgenuity Inc]
 // @author       Aiden Cannon
 // @match        *://*.core.learn.edgenuity.com/*
 // @grant        none
@@ -75,7 +75,7 @@
     }
     // Add the button
     window.tweaksbutton = document.createElement("button")
-    window.tweaksbutton.innerText = "Tweaks"
+    window.tweaksbutton.innerText = "Hacks"
     window.tweaksbutton.id = "tweaksbutton"
     window.tweaksbutton.style.border = "1px solid #5f5f5f"
     window.tweaksbutton.style.boxShadow = "inset 0 0 5px rgba(0, 0, 0, 0.6)"
