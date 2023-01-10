@@ -15,10 +15,11 @@
     var button = document.createElement("button")
     button.id = "searchButton"
     button.innerText = "Search on Brainly"
+    button.style.marginLeft = "15px"
     button.style.position = "absolute"
     button.style.visibility = "visible"
     button.onmouseclick
-    document.body.append(button)
+    document.querySelector("#lessonInfo").appendChild(button)
     document.getElementById("searchButton").onclick = onButtonClick
     document.onmouseup = mouseup
             var copy
@@ -36,8 +37,6 @@
         getClip();
         if(buttonpressed == false){
             document.getElementById("searchButton").style.visibility = "visible"
-            document.getElementById("searchButton").style.top = e.clientY + 10 + "px"
-            document.getElementById("searchButton").style.left = e.clientX + "px"
         }
         else
         {
@@ -50,5 +49,8 @@
         var url = 'https://brainly.com/app/ask?entry=top&q=' + getClip();
         window.open(url , '_blank')
     }
-    setInterval(() => {getClip();},500)
+    setInterval(() => {
+        getClip()
+        if (document.getElementById("searchButton") === null) {
+                          document.querySelector("#lessonInfo").appendChild(button)}},500)
 })();
