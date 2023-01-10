@@ -13,14 +13,37 @@
 (function() {
     'use strict';
     var button = document.createElement("button")
-    button.id = "searchButton"
-    button.innerText = "Search on Brainly"
+    button.classList.add("searchButton")
+    button.innerText = "Search Brainly"
     button.style.marginLeft = "15px"
     button.style.position = "absolute"
     button.style.visibility = "visible"
-    button.onmouseclick
+       const style = document.createElement('style');
+style.innerHTML = `.searchButton {
+	box-shadow: 0px 0px 0px 0px #3dc21b;
+	background-color:#f78e26;
+	border-radius:7px;
+	border:2px solid #f78e26;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:10px;
+	font-weight:bold;
+	padding:2px 18px;
+	text-decoration:none;
+}
+.searchButton:hover {
+	background-color:#ff962f;
+}
+.searchButton:active {
+	position:relative;
+	top:1px;
+}
+`;
+button.appendChild(style)
     document.querySelector("#lessonInfo").appendChild(button)
-    document.getElementById("searchButton").onclick = onButtonClick
+    button.onclick = onButtonClick
     document.onmouseup = mouseup
             var copy
     function getClip () {
@@ -46,8 +69,13 @@
     }
     function onButtonClick(){
         buttonpressed = true
-        var url = 'https://brainly.com/app/ask?entry=top&q=' + getClip();
-        window.open(url , '_blank')
+        let clip = getClip()
+        var url = 'https://brainly.com/app/ask?entry=top&q=' + clip;
+        if (clip !== "") {
+            window.open(url , '_blank')
+        } else {
+            alert("Please copy some text first!")
+        }
     }
     setInterval(() => {
         getClip()
