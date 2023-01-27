@@ -16,7 +16,6 @@
     button.classList.add("searchButton")
     button.innerText = "Search Brainly"
     button.id = "searchButton"
-    button.innerText = "Search on Brainly"
     button.style.marginLeft = "15px"
     button.style.position = "absolute"
     button.style.visibility = "visible"
@@ -38,18 +37,13 @@
 .searchButton:hover {
 	background-color:#ff962f;
 }
-.searchButton:active {
-	position:relative;
-	top:1px;
-}
 `;
     button.appendChild(style)
-    button.onmouseclick
     document.querySelector("#lessonInfo").appendChild(button)
     button.onclick = onButtonClick
     document.getElementById("searchButton").onclick = onButtonClick
     document.onmouseup = mouseup
-            var copy
+            var copy;
     function getClip () {
         navigator.clipboard.readText().then((copied) => {
         console.log(`Found "${copied}" from clipboard`);
@@ -80,7 +74,6 @@
         } else {
             alert("Please copy some text first!")
         }
-        var url = 'https://brainly.com/app/ask?entry=top&q=' + getClip();
         window.open(url , '_blank')
     }
     setInterval(() => {
