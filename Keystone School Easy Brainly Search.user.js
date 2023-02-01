@@ -74,7 +74,6 @@
         } else {
             alert("Please copy some text first!")
         }
-        window.open(url , '_blank')
     }
     setInterval(() => {
         getClip()
