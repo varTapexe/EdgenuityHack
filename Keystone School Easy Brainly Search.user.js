@@ -7,6 +7,7 @@
 // @match        https://learnx-svc.k12.com/*
 // @match        https://student.edgenuity.com/enrollment/*/coursemap
 // @match        https://*.core.learn.edgenuity.com/Player/
+// @match        https://*.core.learn.edgenuity.com/player/
 // @grant        none
 // ==/UserScript==
 
